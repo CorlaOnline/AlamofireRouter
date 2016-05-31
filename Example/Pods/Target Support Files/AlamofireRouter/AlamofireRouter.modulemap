@@ -1,0 +1,6 @@
+framework module AlamofireRouter {
+  umbrella header "AlamofireRouter-umbrella.h"
+
+  export *
+  module * { export * }
+}

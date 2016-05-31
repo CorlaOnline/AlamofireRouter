@@ -1,0 +1,19 @@
+PODS:
+  - Alamofire (3.4.0)
+  - AlamofireRouter (0.1.0):
+    - Alamofire (~> 3.2)
+
+DEPENDENCIES:
+  - AlamofireRouter (from `../`)
+
+EXTERNAL SOURCES:
+  AlamofireRouter:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  AlamofireRouter: f98b17288f9c117a4995a61c0fb293d614320706
+
+PODFILE CHECKSUM: e538aa6deea6ec0f99db7df5e7ac3db0ac14382d
+
+COCOAPODS: 1.0.0
