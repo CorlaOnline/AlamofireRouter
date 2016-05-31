@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AlamofireRouter_Example' do
+  pod 'AlamofireRouter', :path => '../'
+
+  target 'AlamofireRouter_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
