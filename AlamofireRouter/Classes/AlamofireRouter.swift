@@ -9,17 +9,17 @@ import UIKit
 import Alamofire
 
 // MARK: - Router struct
-struct Router {
+public struct Router {
 
     var baseURL = ""
 
-    init(baseURL: String) {
+    public init(baseURL: String) {
 
         self.baseURL = baseURL
 
     }
 
-    func endPoint(path path: String, method: Alamofire.Method = .GET, parameters: [String : AnyObject] = [ : ], encoding: ParameterEncoding = .URL) -> NSMutableURLRequest {
+    public func endPoint(path path: String, method: Alamofire.Method = .GET, parameters: [String : AnyObject] = [ : ], encoding: ParameterEncoding = .URL) -> NSMutableURLRequest {
 
         let mutableURLRequest = NSMutableURLRequest(URL: NSURL(string: baseURL.stringByAppendingString(path))!)
         mutableURLRequest.HTTPMethod = method.rawValue
@@ -31,7 +31,7 @@ struct Router {
 }
 
 // MARK: - RouterProtocol
-protocol RouterProtocol: URLRequestConvertible {
+public protocol RouterProtocol: URLRequestConvertible {
 
     var router: Router { get }
 
