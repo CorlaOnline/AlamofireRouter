@@ -7,12 +7,36 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        var post: [String: AnyObject] {
+
+            return [
+                "title": "foo",
+                "body": "bar",
+                "userId": 1
+            ]
+        }
+
+        Alamofire.request(MyAPI.createPost(post: post)).response { resp in
+
+            print((resp.0, resp.1, resp.2, resp.3))
+
+            Alamofire.request(MyAPI.requestPosts(idPost: "1")).response { resp in
+
+                print((resp.0, resp.1, resp.2, resp.3))
+
+            }
+
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,4 +45,3 @@ class ViewController: UIViewController {
     }
 
 }
-

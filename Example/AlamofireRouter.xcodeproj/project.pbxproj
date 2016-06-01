@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		EE8141A01BF2DCA95AE8F5AB /* Pods_AlamofireRouter_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC18B4995678BB8C8D3842A /* Pods_AlamofireRouter_Example.framework */; };
+		FA76F5161CFED439007BAE85 /* MyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA76F5151CFED439007BAE85 /* MyAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		909A4EBE66AD38A0C88F77E6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		ABC18B4995678BB8C8D3842A /* Pods_AlamofireRouter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireRouter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF88C97334F1F46F11B16D86 /* Pods-AlamofireRouter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireRouter_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireRouter_Example/Pods-AlamofireRouter_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		FA76F5151CFED439007BAE85 /* MyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				FA76F5151CFED439007BAE85 /* MyAPI.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -361,6 +364,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				FA76F5161CFED439007BAE85 /* MyAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

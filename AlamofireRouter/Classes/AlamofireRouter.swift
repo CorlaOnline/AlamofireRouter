@@ -21,7 +21,14 @@ public struct Router {
 
     public func endPoint(path path: String, method: Alamofire.Method = .GET, parameters: [String : AnyObject] = [ : ], encoding: ParameterEncoding = .URL) -> NSMutableURLRequest {
 
-        let mutableURLRequest = NSMutableURLRequest(URL: NSURL(string: baseURL.stringByAppendingString(path))!)
+        guard let url = NSURL(string: baseURL.stringByAppendingString(path)) else {
+
+            return ParameterEncoding.URL.encode(NSMutableURLRequest(), parameters: nil).0
+
+        }
+
+        let mutableURLRequest = NSMutableURLRequest(URL: url)
+
         mutableURLRequest.HTTPMethod = method.rawValue
 
         return encoding.encode(mutableURLRequest, parameters: parameters).0
