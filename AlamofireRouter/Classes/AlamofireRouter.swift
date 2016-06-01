@@ -5,7 +5,6 @@
 //  Copyright © 2016 CorlaOnline. All rights reserved.
 //
 
-import UIKit
 import Alamofire
 
 // MARK: - Router struct
