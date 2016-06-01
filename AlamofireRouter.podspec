@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlamofireRouter'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = 'Simple Alamofire router.'
 
 # This description is used to generate tags and improve search results.
@@ -26,9 +26,12 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Alex Corlatti' => 'alex.corlatti@gmail.com' }
   s.source           = { :git => 'https://github.com/CorlaOnline/AlamofireRouter.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/corlaonline'
+  s.social_media_url = 'https://twitter.com/corlaonline'
 
   s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.9'
+  s.tvos.deployment_target = '9.0'
+  s.watchos.deployment_target = '2.0'
 
   s.source_files = 'AlamofireRouter/Classes/**/*'
   
