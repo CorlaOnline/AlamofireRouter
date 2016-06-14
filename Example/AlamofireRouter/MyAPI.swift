@@ -29,11 +29,11 @@ enum MyAPI: RouterProtocol {
 
         case .createPost(let post):
 
-            return router.endPoint(path: "posts", method: .POST, parameters: post)
+            return router.endPoint(path: "posts", method: .POST, parameters: post, headers: [["prova": "field"]])
 
         case .fakeRequest(let fakeParam):
 
-            return router.endPoint(path: "fakePath", method: .PATCH, parameters: ["par" : fakeParam], encoding: .JSON)
+            return router.endPoint(path: "fakePath", method: .PATCH, parameters: ["par" : fakeParam], encoding: .JSON, headers: [["prova": "field"]])
 
         }
 
