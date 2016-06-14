@@ -57,6 +57,7 @@ The function ```router.endPoint``` has four parameters:
 * ```method: Alamofire.Method``` the method of the request, by default is ```.GET```
 * ```parameters: [String : AnyObject]``` the parameters if necessary, by default is ```[ : ]```
 * ```encoding: ParameterEncoding``` the encoding type, by default is ```.URL```
+* ```headers: [[String: String]]``` the header parameters if necessary, by default is ```[[:]]```
 
 ### Create your router API
 
@@ -85,7 +86,7 @@ enum MyAPI: RouterProtocol {
 
             case .allPersonalizedRequest(let param):
 
-                return router.endPoint(path: "myPath", method: .PATCH, parameters: ["par" : param], encoding: .JSON)
+                return router.endPoint(path: "myPath", method: .PATCH, parameters: ["par" : param], encoding: .JSON, headers: [["Content-type": "json"]])
 
         }
 
