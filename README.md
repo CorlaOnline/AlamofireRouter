@@ -97,11 +97,24 @@ enum MyAPI: RouterProtocol {
 
 ### Use it with Alamofire
 ```swift
-    Alamofire.request(MyAPI.myRequest(myParameter: "aValue")).response { resp in 
+Alamofire.request(MyAPI.myRequest(myParameter: "aValue")).response { resp in 
 
-        // Do some stuff
+	// Do some stuff
 
-    }
+}
+```
+
+### Use it with [AlamofireUIManager](http://https://cocoapods.org/pods/AlamofireUIManager)
+```swift
+
+let netManager = AlamofireUIManager.sharedInstance
+
+netManager.request(MyAPI.myRequest(myParameter: "aValue"), completionHandler: { json in
+	
+	// Do some stuff
+	
+})
+
 ```
 
 ## Author

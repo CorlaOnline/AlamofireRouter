@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlamofireRouter'
-  s.version          = '0.0.7'
+  s.version          = '0.1.0'
   s.summary          = 'Simple Alamofire router.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Simple Alamofire router, that permit you to create your API in easy way.
                        DESC
 
   s.homepage         = 'https://github.com/CorlaOnline/AlamofireRouter'
