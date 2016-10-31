@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlamofireRouter'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Simple Alamofire router.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Simple Alamofire router, that permit you to create your API in easy way.
   s.source           = { :git => 'https://github.com/CorlaOnline/AlamofireRouter.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/corlaonline'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.9'
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
@@ -41,5 +41,5 @@ Simple Alamofire router, that permit you to create your API in easy way.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   #s.frameworks = 'UIKit'
-  s.dependency 'Alamofire', '~> 3.2'
+  s.dependency 'Alamofire', '~> 4.0'
 end

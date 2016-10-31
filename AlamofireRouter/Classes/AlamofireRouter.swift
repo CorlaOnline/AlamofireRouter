@@ -18,29 +18,28 @@ public struct Router {
 
     }
 
-    public func endPoint(path path: String, method: Alamofire.Method = .GET, parameters: [String : AnyObject] = [ : ], encoding: ParameterEncoding = .URL, headers: [[String: String]] = [[ : ]]) -> NSMutableURLRequest {
+    public func endPoint(path: String, method: Alamofire.HTTPMethod = .get, parameters: [String : Any] = [ : ], encoding: ParameterEncoding = URLEncoding.default, headers: [[String: String]] = [[ : ]]) -> URLRequest {
 
-        guard let url = NSURL(string: baseURL.stringByAppendingString(path)) else {
+        guard let url = URL(string: baseURL + path) else {
 
-            return ParameterEncoding.URL.encode(NSMutableURLRequest(), parameters: nil).0
-
+            return try! URLEncoding.default.encode(URLRequest(url: URL(string: "")!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30), with: nil)
         }
 
-        let mutableURLRequest = NSMutableURLRequest(URL: url)
+        var request = try! encoding.encode(URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30), with: parameters)
 
-        mutableURLRequest.HTTPMethod = method.rawValue
+        request.httpMethod = method.rawValue
 
         for header in headers {
 
             for (field, value) in header {
 
-                mutableURLRequest.addValue(value, forHTTPHeaderField: field)
+                request.addValue(value, forHTTPHeaderField: field)
 
             }
 
         }
 
-        return encoding.encode(mutableURLRequest, parameters: parameters).0
+        return request
 
     }
 

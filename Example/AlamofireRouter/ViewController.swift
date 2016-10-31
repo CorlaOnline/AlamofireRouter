@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        var post: [String: AnyObject] {
+        var post: [String: Any] {
 
             return [
                 "title": "foo",
@@ -25,13 +25,23 @@ class ViewController: UIViewController {
             ]
         }
 
-        Alamofire.request(MyAPI.createPost(post: post)).response { resp in
+        Alamofire.request(MyAPI.createPost(post: post)).response { response in
+            
+            let error = response.error as? NSError
+            let data = response.data
+            let string = String(data: data!, encoding: .utf8)
+            let httpResponse = response.response
 
-            print((resp.0, resp.1, resp.2, resp.3))
+            print((error, data, string, httpResponse))
 
-            Alamofire.request(MyAPI.requestPosts(idPost: "1")).response { resp in
-
-                print((resp.0, resp.1, resp.2, resp.3))
+            Alamofire.request(MyAPI.requestPosts(idPost: "1")).response { response in
+                
+                let error = response.error as? NSError
+                let data = response.data
+                let string = String(data: data!, encoding: .utf8)
+                let httpResponse = response.response
+                
+                print((error, data, string, httpResponse))
 
             }
 

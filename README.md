@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/AlamofireRouter.svg?style=flat)](http://cocoapods.org/pods/AlamofireRouter)
 [![Platform](https://img.shields.io/cocoapods/p/AlamofireRouter.svg?style=flat)](http://cocoapods.org/pods/AlamofireRouter)
 
-AlamofireRouter is a simple Alamofire router
+AlamofireRouter is a simple Alamofire router. If you need swift 2.3 version, use the 0.1.0 pod version
 
 ## Example
 
@@ -13,8 +13,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-- iOS 8.0+ / Mac OS X 10.9+ / tvOS 9.0+ / watchOS 2.0+
-- Xcode 7.3+
+- iOS 9.0+ / Mac OS X 10.9+ / tvOS 9.0+ / watchOS 2.0+
+- Xcode 8.0+
 
 ## Installation
 
@@ -26,13 +26,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 $ gem install cocoapods
 ```
 
-> CocoaPods 0.39.0+ is required to build AlamofireRouter
+> CocoaPods 1.0.0+ is required to build AlamofireRouter
 
 To integrate AlamofireRouter into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
 pod 'AlamofireRouter'
@@ -45,7 +45,7 @@ $ pod install
 ```
 ## Usage
 
-You have to create an ```enum``` that conform ```RouterProtocol```, variables ```router``` and ```URLRequest``` are mandatories.
+You have to create an ```enum``` that conform ```RouterProtocol```, so you need variable ```router``` and function ```URLRequest``` are mandatories.
 
 In ```router``` you have to set your API base URL.
 
@@ -54,9 +54,9 @@ In ```URLRequest``` you can create your endpoints by function ```router.endPoint
 The function ```router.endPoint``` has four parameters:
 
 * ```path: String``` the path for the endpoint
-* ```method: Alamofire.Method``` the method of the request, by default is ```.GET```
-* ```parameters: [String : AnyObject]``` the parameters if necessary, by default is ```[ : ]```
-* ```encoding: ParameterEncoding``` the encoding type, by default is ```.URL```
+* ```method: Alamofire.HTTPMethod``` the method of the request, by default is ```.get```
+* ```parameters: [String : Any]``` the parameters if necessary, by default is ```[ : ]```
+* ```encoding: ParameterEncoding``` the encoding type, by default is ```URLEncoding.default```
 * ```headers: [[String: String]]``` the header parameters if necessary, by default is ```[[:]]```
 
 ### Create your router API
@@ -67,12 +67,12 @@ import AlamofireRouter
 enum MyAPI: RouterProtocol { 
 
     case myRequest(myParameter: String)
-    case otherRequest(otherParameter: [String: AnyObject])
+    case otherRequest(otherParameter: [String: Any])
     case allPersonalizedRequest(param: String)
 
     var router: Router { return Router(baseURL: "http://YOUR_API_BASE_URL.com/") }
 
-    var URLRequest: NSMutableURLRequest {
+    public func asURLRequest() throws -> URLRequest {
 
         switch self {
 
@@ -82,11 +82,11 @@ enum MyAPI: RouterProtocol {
 
             case .otherRequest(let otherParameter):
 
-                return router.endPoint(path: "otherPath", method: .POST, parameters: otherParameter)
+                return router.endPoint(path: "otherPath", method: .post, parameters: otherParameter)
 
             case .allPersonalizedRequest(let param):
 
-                return router.endPoint(path: "myPath", method: .PATCH, parameters: ["par" : param], encoding: .JSON, headers: [["Content-type": "json"]])
+                return router.endPoint(path: "myPath", method: .patch, parameters: ["par" : param], encoding: JSONEncoding.prettyPrinted, headers: [["Content-type": "json"]])
 
         }
 

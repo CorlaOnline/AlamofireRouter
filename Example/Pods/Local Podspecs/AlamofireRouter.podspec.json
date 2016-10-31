@@ -2,7 +2,7 @@
   "name": "AlamofireRouter",
   "version": "0.1.0",
   "summary": "Simple Alamofire router.",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "Simple Alamofire router, that permit you to create your API in easy way.",
   "homepage": "https://github.com/CorlaOnline/AlamofireRouter",
   "license": {
     "type": "MIT",
@@ -15,14 +15,17 @@
     "git": "https://github.com/CorlaOnline/AlamofireRouter.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/corlaonline",
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0",
+    "osx": "10.9",
+    "tvos": "9.0",
+    "watchos": "2.0"
   },
   "source_files": "AlamofireRouter/Classes/**/*",
-  "frameworks": "UIKit",
   "dependencies": {
     "Alamofire": [
-      "~> 3.2"
+      "~> 4.0"
     ]
   }
 }
