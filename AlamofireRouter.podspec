@@ -29,7 +29,7 @@ Simple Alamofire router, that permit you to create your API in easy way.
   s.social_media_url = 'https://twitter.com/corlaonline'
 
   s.ios.deployment_target = '9.0'
-  s.osx.deployment_target = '10.9'
+  s.osx.deployment_target = '10.11'
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
 
